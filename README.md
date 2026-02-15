@@ -2,6 +2,8 @@
 
 Next.js-based B2C marketplace storefront for Local Meadow.
 
+**Documentation**: In the **localmeadow-docs** repo under `backlog/docs/` and `backlog/decisions/`. From that repo: `mise exec -- backlog doc list` then `mise exec -- backlog doc view <id>`.
+
 ## Features
 
 - Product browsing and search (Algolia)

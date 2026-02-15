@@ -60,15 +60,27 @@ You are a **Senior Full-Stack Engineer** working on the Local Meadow Storefront,
 
 ## 📚 Essential Documentation
 
-All documentation is managed via backlog docs:
+**All documentation lives in the docs repo** (localmeadow-docs). Do not add random markdown files (e.g. ad-hoc .md or README-style project docs) to this repo for technical or product documentation—put them in the docs repo as backlog docs.
+
+**Use backlog docs** for technical and other project documentation. Run all `backlog doc` commands from the **localmeadow-docs** directory:
 
 ```bash
+# From localmeadow-docs:
+cd ../localmeadow-docs   # or path to docs repo
+
 # List all documentation
 mise exec -- backlog doc list
 
 # View specific doc
 mise exec -- backlog doc view <id>
+
+# Create new technical doc
+mise exec -- backlog doc create "Title" -p technical/<topic> -t technical
+# Then edit the created file: add audience: technical (or public) and content
 ```
+
+- Technical docs: use type `technical` and path under `technical/` (e.g. `technical/backend`, `technical/frontend`).
+- Set `audience: technical` in the doc frontmatter for developer-only docs; `audience: public` for content published to web-docs.
 
 ---
 
@@ -78,7 +90,7 @@ All commands must use `mise` or `mise exec --` prefix:
 
 ### Development
 ```bash
-# Start storefront (requires API running at localhost:9000)
+# Start storefront on port 3000 (requires API running at localhost:9000)
 mise run dev                 # http://localhost:3000 (with Turbopack)
 
 # Build for production
@@ -215,8 +227,8 @@ localmeadow-storefront/
    ```
 
 4. **Access**:
-   - Storefront: http://localhost:3000
-   - API: http://localhost:9000
+ - Storefront: http://localhost:3000 (deterministic port)
+ - API: http://localhost:9000
 
 ### Adding New Features
 
