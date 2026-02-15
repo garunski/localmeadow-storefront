@@ -1,0 +1,15 @@
+# Mise configuration for Local Meadow Storefront
+# Next.js B2C marketplace storefront
+
+[tools]
+node = "20"
+
+[tools."github:MrLesk/Backlog.md"]
+version = "latest"
+bin = "backlog"
+
+[env]
+NODE_ENV = "development"
+
+[task_config]
+includes = [".mise/run.toml"]

@@ -1,0 +1,32 @@
+# Mise tasks for Local Meadow Storefront
+
+# Development tasks
+[dev]
+description = "Start the storefront in development mode with Turbopack"
+run = "yarn dev"
+
+[build]
+description = "Build the storefront for production"
+run = "yarn build"
+
+[start]
+description = "Start the storefront in production mode"
+run = "yarn start"
+
+# Code quality tasks
+[lint]
+description = "Lint the codebase"
+run = "yarn lint"
+
+# Backlog tasks
+["backlog-browser"]
+description = "Open the backlog browser for visual task management"
+run = "mise exec -- backlog browser"
+
+["backlog-overview"]
+description = "Show backlog overview"
+run = "mise exec -- backlog overview"
+
+["backlog-tasks"]
+description = "List all backlog tasks"
+run = "mise exec -- backlog task list --plain"
