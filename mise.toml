@@ -4,10 +4,6 @@
 [tools]
 node = "20"
 
-[tools."github:MrLesk/Backlog.md"]
-version = "latest"
-bin = "backlog"
-
 [env]
 NODE_ENV = "development"
 

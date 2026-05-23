@@ -60,27 +60,15 @@ You are a **Senior Full-Stack Engineer** working on the Local Meadow Storefront,
 
 ## 📚 Essential Documentation
 
-**All documentation lives in the docs repo** (localmeadow-docs). Do not add random markdown files (e.g. ad-hoc .md or README-style project docs) to this repo for technical or product documentation—put them in the docs repo as backlog docs.
+**All documentation lives in the docs repo** (localmeadow-docs). Do not add random markdown files (e.g. ad-hoc .md or README-style project docs) to this repo for technical or product documentation—put them in the S.E.E. knowledge store.
 
-**Use backlog docs** for technical and other project documentation. Run all `backlog doc` commands from the **localmeadow-docs** directory:
+**Knowledge store** (localmeadow-docs):
 
-```bash
-# From localmeadow-docs:
-cd ../localmeadow-docs   # or path to docs repo
+- Docs: `.s_e_e/knowledge/docs/` (e.g. `technical/frontend/`, `product/`)
+- Decisions: `.s_e_e/knowledge/decisions/`
+- Stories: `.s_e_e/stories/stories/`
 
-# List all documentation
-mise exec -- backlog doc list
-
-# View specific doc
-mise exec -- backlog doc view <id>
-
-# Create new technical doc
-mise exec -- backlog doc create "Title" -p technical/<topic> -t technical
-# Then edit the created file: add audience: technical (or public) and content
-```
-
-- Technical docs: use type `technical` and path under `technical/` (e.g. `technical/backend`, `technical/frontend`).
-- Set `audience: technical` in the doc frontmatter for developer-only docs; `audience: public` for content published to web-docs.
+Author and edit markdown directly. Use the `/doc` and `/stories` agent skills in localmeadow-docs (`.agents/skills/doc/`, `.agents/skills/stories/`). Set `audience: technical` in doc frontmatter for developer-only docs; `audience: public` for content published to web-docs (`mise run web-docs-dev` in localmeadow-docs).
 
 ---
 
@@ -98,27 +86,6 @@ mise run build
 
 # Start production server
 mise run start
-```
-
-### Backlog Management
-```bash
-# Check project status
-mise exec -- backlog overview
-
-# List all tasks
-mise exec -- backlog task list --plain
-
-# View specific task
-mise exec -- backlog task <number> --plain
-
-# Mark task In Progress
-mise exec -- backlog task edit <number> -s "In Progress" -a @me
-
-# Mark task Done
-mise exec -- backlog task edit <number> -s "Done"
-
-# Open visual browser
-mise run backlog-browser
 ```
 
 ### Code Quality
@@ -232,7 +199,7 @@ localmeadow-storefront/
 
 ### Adding New Features
 
-1. Review backlog task
+1. Review the relevant S.E.E. story in localmeadow-docs (if one exists)
 2. Create/modify components and pages
 3. Implement API integration
 4. Test on mobile and desktop
@@ -334,18 +301,7 @@ Next.js automatically generates static pages where possible. Check build output 
 
 ## 📖 Documentation Access
 
-All documentation is managed via backlog:
-
-```bash
-# List all documentation
-mise exec -- backlog doc list
-
-# View specific doc
-mise exec -- backlog doc view <id>
-
-# Visual browser interface
-mise run backlog-browser
-```
+Documentation and stories live in **localmeadow-docs** under `.s_e_e/knowledge/` and `.s_e_e/stories/`. Browse files directly or use the S.E.E. GUI when running that project.
 
 ---
 
@@ -360,10 +316,6 @@ mise run start               # Start production server
 # Code quality
 mise run lint                # Lint with Next.js
 
-# Backlog
-mise run backlog-overview    # Project status
-mise run backlog-tasks       # List tasks
-mise run backlog-browser     # Visual UI
 ```
 
 ---
