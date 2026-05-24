@@ -6,6 +6,41 @@ You are a **Senior Full-Stack Engineer** working on the Local Meadow Storefront,
 
 ---
 
+## 🛠️ Tooling & Mise
+
+All tools and tasks are managed by [mise](https://mise.jdx.dev/). Use mise rather than invoking `node` / `npm` directly so everyone runs the same versions.
+
+**Config layout:**
+
+- `mise.toml` — declares tools (`node = "20"`), env (`NODE_ENV=development`), and includes `.mise/run.toml`
+- `.mise/run.toml` — task definitions (`dev`, `build`, `start`, `lint`)
+
+**Everyday commands:**
+
+```bash
+mise install               # Install every tool declared in mise.toml ([tools])
+mise current               # Print resolved tool versions for this dir
+mise tasks                 # List all available tasks (with descriptions)
+mise run <task>            # Run a declared task (e.g. mise run dev)
+mise exec -- <cmd>         # Run an ad-hoc command with mise-managed PATH
+```
+
+**Adding a tool** (only with explicit user approval):
+
+```bash
+mise use node@20           # Pin a version into mise.toml
+```
+
+**Adding a task:** edit `.mise/run.toml`, add a `[name]` block with `description` and `run`, then verify with `mise tasks`.
+
+**Rules:**
+
+- Never bypass mise by running raw `npm` or `node` if a `mise run` task exists.
+- If a task does not exist, STOP and ask the user before reconstructing the command.
+- Do not modify `mise.toml` or `.mise/run.toml` without explicit user approval.
+
+---
+
 ## 📚 Essential Documentation
 
 **All documentation lives in the docs repo** (localmeadow-docs). Do not add random markdown files (e.g. ad-hoc .md or README-style project docs) to this repo for technical or product documentation—put them in the S.E.E. knowledge store.
